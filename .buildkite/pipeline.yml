@@ -1,0 +1,7 @@
+steps:
+  - label: ":pipeline::julia: Launch JuliaCon 2023 Talk Demo Pipelines!"
+    commands:
+      - buildkite-agent pipeline upload .buildkite/demo-1/pipeline.yml
+
+    agents:
+      sandbox.jl: true
