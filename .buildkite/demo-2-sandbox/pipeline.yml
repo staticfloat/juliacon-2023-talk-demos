@@ -1,0 +1,19 @@
+steps:
+  - label: "Running workflows in reproducible, sandboxed environments"
+    plugins:
+      - JuliaCI/julia#v1:
+          version: 1.6
+      - staticfloat/sandbox#v1:
+          rootfs_url: "https://github.com/JuliaCI/rootfs-images/releases/download/v5.53/package_linux.x86_64.tar.gz"
+          rootfs_treehash: "ac9484f78841ec79ae8a5e4c4212c936ea9b600f"
+          workspaces:
+            # Include `/cache` so that `julia` install can properly cache its Julia downloads
+            - "/cache:/cache"
+    commands: |
+      echo "+++ Within sandbox!"
+      gcc --version
+    agents:
+      os: "linux"
+      arch: "x86_64"
+      sandbox.jl: true
+      queue: juliaecosystem

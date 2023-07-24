@@ -1,0 +1,31 @@
+# NOTE: This `pipeline.yml` file is saved in the WebUI.
+# Editing it here has no effect, we simply include this
+# to keep track of what is implemented in the WebUI!
+steps:
+  # In the WebUI, the `cryptic` launch job _must_ be the first job to run.
+  # This is because we maintain a chain of trust from the first job to run
+  # all the way until the actual jobs that make use of unlocked secrets run.
+  - label: ":rocket: launch pipelines"
+    plugins:
+      - staticfloat/cryptic#v2:
+          # Only signed pipelines have the ability to decrypt secrets (if you
+          # attempt to use `cryptic` to decrypt secrets from an unsigned pipeline,
+          # decryption will fail as the necessary keys will not be available).
+          #signed_pipelines:
+          #  - pipeline: .buildkite/demo-6/pipeline.yml
+          #    signature_file: .buildkite/demo-6/pipeline.yml.signature
+
+          # Pipelines that do not need to decrypt secrets can be launched via
+          # `unsigned_pipelines`, and do not need a `signature_file`.
+          unsigned_pipelines:
+            - .buildkite/pipeline.yml
+
+    # cryptic will take care of running the commands to launch things, so we just
+    # don't do anything in the `command` here.
+    command: true
+
+    # We require an agent that can run `cryptic`, and we want to run on the
+    # `juliaecosystem` set of runners.
+    agents:
+      cryptic_capable: true
+      queue: juliaecosystem

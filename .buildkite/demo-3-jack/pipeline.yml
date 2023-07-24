@@ -1,0 +1,16 @@
+steps:
+  - label: ":bucket: Install xz via JLLs"
+    agents:
+      arch: x86_64
+      os: linux
+      sandbox.jl: true
+      queue: "juliaecosystem"
+
+    plugins:
+      - JuliaCI/julia#v1:
+          version: 1
+      - JuliaCI/jack:
+          install:
+            - "XZ_jll"
+    commands:
+      xz --version

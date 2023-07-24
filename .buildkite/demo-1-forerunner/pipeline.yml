@@ -1,0 +1,49 @@
+steps:
+  - label: ":pipeline: Dynamic Pipelines with Forerunner"
+    plugins:
+      # If any Julia files are modified, run the format checking workflow.
+      - staticfloat/forerunner:
+            watch:
+              - "**/*.jl"
+            target: .buildkite/demo-1/targets/simple-format.yml
+            target_type: simple
+
+      # Assume you have a conventional mono-repo set up with all your
+      # packages in a `lib` directory, and package tests need to be
+      # run only for the packages that are modified.
+      - staticfloat/forerunner:
+          watch:
+            - lib/*
+          path_processor: .buildkite/lib/path_processors/per-project
+          target: .buildkite/demo-1/targets/templated-package-tests.yml
+          target_type: template
+
+      # Say, you have a directory named `data`, which houses some data
+      # that needs to be properly pre-processed in some specialized way
+      # (depending on the file or some attributes of it) and then be uploaded.
+      - staticfloat/forerunner:
+          watch:
+            - data/*
+          path_processor: .buildkite/lib/path_processors/per-file
+          target: .buildkite/demo-1/targets/command-data-upload.sh
+          target_type: command
+
+      # Finally, imagine you have a truly complex pipeline, with lots
+      # of inter-dependencies, and all you care about is knowing which
+      # all of the files that you're watching have changed, and will
+      # let your `target` do all the heavy-lifting, based on all the
+      # projects that were changed.
+      - staticfloat/forerunner:
+          watch:
+            - lib/*
+          path_processor: .buildkite/lib/path_processors/per-project
+          target: .buildkite/demo-1/targets/grouped-command-complex.sh
+          target_type: grouped_command
+
+      # You can also take things to the next level with templated pipelines
+      # by using forerunner's `command` and/or `grouped_command` targets
+      # using `ytt` via the `JuliaCI/ytt` plugin.
+
+    agents:
+      sandbox.jl: true
+      queue: juliaecosystem
