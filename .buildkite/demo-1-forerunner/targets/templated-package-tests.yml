@@ -1,1 +1,11 @@
-# placeholder pipeline for a simple test job.
+steps:
+  - label: ":testtube: Package Tests"
+
+    plugins:
+      - JuliaCI/julia#v1:
+      - JuliaCI/julia-test#v1:
+          project: {PATH}
+
+    agents:
+      sandbox.jl: "true"
+      os: "linux"
