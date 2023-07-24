@@ -1,7 +1,6 @@
 steps:
   - label: ":bucket: jack: Install xz via JLLs"
     agents:
-      arch: x86_64
       os: linux
       sandbox.jl: true
       queue: "juliaecosystem"

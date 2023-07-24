@@ -1,0 +1,7 @@
+name = "PackageToTest"
+uuid = "f3b918e0-511d-8c82-0358-d710b5052ccf"
+version = "0.1.0"
+
+[deps]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+Tracy = "e689c965-62c8-4b79-b2c5-8359227902fd"
