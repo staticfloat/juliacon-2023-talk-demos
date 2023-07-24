@@ -5,7 +5,7 @@ steps:
       - staticfloat/forerunner:
             watch:
               - "**/*.jl"
-            target: .buildkite/demo-1/targets/simple-format.yml
+            target: .buildkite/demo-1-forerunner/targets/simple-format.yml
             target_type: simple
 
       # Assume you have a conventional mono-repo set up with all your
@@ -15,7 +15,7 @@ steps:
           watch:
             - lib/*
           path_processor: .buildkite/lib/path_processors/per-project
-          target: .buildkite/demo-1/targets/templated-package-tests.yml
+          target: .buildkite/demo-1-forerunner/targets/templated-package-tests.yml
           target_type: template
 
       # Say, you have a directory named `data`, which houses some data
@@ -25,7 +25,7 @@ steps:
           watch:
             - data/*
           path_processor: .buildkite/lib/path_processors/per-file
-          target: .buildkite/demo-1/targets/command-data-upload.sh
+          target: .buildkite/demo-1-forerunner/targets/command-data-upload.sh
           target_type: command
 
       # Finally, imagine you have a truly complex pipeline, with lots
@@ -37,7 +37,7 @@ steps:
           watch:
             - lib/*
           path_processor: .buildkite/lib/path_processors/per-project
-          target: .buildkite/demo-1/targets/grouped-command-complex.sh
+          target: .buildkite/demo-1-forerunner/targets/grouped-command-complex.sh
           target_type: grouped_command
 
       # You can also take things to the next level with templated pipelines
