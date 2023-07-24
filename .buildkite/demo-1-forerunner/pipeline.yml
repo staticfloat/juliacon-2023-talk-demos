@@ -46,3 +46,4 @@ steps:
 
     agents:
       sandbox.jl: true
+      queue: juliaecosystem
