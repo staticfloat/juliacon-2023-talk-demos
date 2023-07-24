@@ -1,5 +1,5 @@
 steps:
-  - label: "Running workflows in reproducible, sandboxed environments"
+  - label: "sandbox: run workflow in reproducible, sandboxed environments"
     plugins:
       - JuliaCI/julia#v1:
           version: 1.6

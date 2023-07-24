@@ -1,5 +1,5 @@
 steps:
-  - label: ":bucket: Install xz via JLLs"
+  - label: ":bucket: jack: Install xz via JLLs"
     agents:
       arch: x86_64
       os: linux
@@ -13,4 +13,5 @@ steps:
           install:
             - "XZ_jll"
     commands:
+      echo "+++ xz --version"
       xz --version
