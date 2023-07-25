@@ -13,7 +13,7 @@ steps:
       # run only for the packages that are modified.
       - staticfloat/forerunner:
           watch:
-            - lib/*
+            - .buildkite/demo-1-forerunner/lib/*
           path_processor: .buildkite/lib/path_processors/per-project
           target: .buildkite/demo-1-forerunner/targets/templated-package-tests.yml
           target_type: template
