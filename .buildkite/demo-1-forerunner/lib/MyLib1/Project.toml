@@ -1,0 +1,10 @@
+name = "MyLib1"
+uuid = "99b75255-361a-45d1-991a-86e48a0c3acd"
+authors = ["Anant Thazhemadam <anant.thazhemadam@gmail.com>"]
+version = "0.1.0"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
