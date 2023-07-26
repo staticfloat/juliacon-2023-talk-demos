@@ -1,0 +1,18 @@
+steps:
+  - label: ":pipeline: Dynamic Pipelines with YTT"
+
+    plugins:
+      - JuliaCI/ytt:
+          version: "0.43.0"
+
+      - staticfloat/forerunner:
+          watch:
+            - .buildkite/demo-1-forerunner/lib/*
+          path_processor: .buildkite/lib/path_processors/per-project
+          target: .buildkite/demo-2-ytt/targets/templated-tests-with-names.sh
+          target_type: command
+
+    agents:
+      sandbox_capable: "true"
+      os: "linux"
+      queue: juliacon2023
