@@ -16,7 +16,8 @@ export @testset_tracepoint, recursive_function
 #     ...
 # end
 macro testset_tracepoint(name, body)
-    body_with_tracepoint = Expr(:block, Expr(:macrocall, Symbol("@tracepoint"), __source__, name, esc(body)))
+    body_with_tracepoint =
+        Expr(:block, Expr(:macrocall, Symbol("@tracepoint"), __source__, name, esc(body)))
     return Expr(:macrocall, Symbol("@testset"), __source__, name, body_with_tracepoint)
 end
 
