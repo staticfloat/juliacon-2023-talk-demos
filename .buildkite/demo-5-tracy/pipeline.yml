@@ -7,7 +7,7 @@ steps:
           trace: test
       # We use the "julia-test" plugin to do the actual demo
       - JuliaCI/julia-test#v1:
-          project: .buildkite/demo-4-tracy
+          project: .buildkite/demo-5-tracy
     # Upload all tracy artifacts
     artifacts:
       - "*.trace"
