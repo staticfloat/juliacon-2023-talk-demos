@@ -1,5 +1,5 @@
 steps:
-  - label: ":pipeline: Dynamic Pipelines with YTT"
+  - label: ":yaml: Dynamic Pipelines with YTT"
 
     plugins:
       - JuliaCI/ytt:

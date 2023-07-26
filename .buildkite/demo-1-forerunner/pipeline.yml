@@ -1,5 +1,5 @@
 steps:
-  - label: ":pipeline: Dynamic Pipelines with Forerunner"
+  - label: ":four: :runner: Dynamic Pipelines with Forerunner"
     plugins:
       # If any Julia files are modified, run the format checking workflow.
       - staticfloat/forerunner:
