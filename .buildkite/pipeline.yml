@@ -1,35 +1,35 @@
 steps:
   - block: "Forerunner"
   - command: buildkite-agent pipeline upload .buildkite/demo-1-forerunner/pipeline.yml
-    label: ":four: :runner: Forerunner"
+    label: ":pipeline: :four: :runner: Forerunner"
     agents:
       sandbox_capable: true
       queue: juliacon2023
 
   - block: "YTT"
   - command: buildkite-agent pipeline upload .buildkite/demo-2-ytt/pipeline.yml
-    label: ":yaml: YTT"
+    label: ":pipeline: :yaml: YTT"
     agents:
       sandbox_capable: true
       queue: juliacon2023
 
   - block: "Sandbox"
   - command: buildkite-agent pipeline upload .buildkite/demo-3-sandbox/pipeline.yml
-    label: ":earth_asia: Sandbox"
+    label: ":pipeline: :earth_asia: Sandbox"
     agents:
       sandbox_capable: true
       queue: juliacon2023
 
   - block: "Jack"
   - command: buildkite-agent pipeline upload .buildkite/demo-4-jack/pipeline.yml
-    label: ":bucket: Jack"
+    label: ":pipeline: :bucket: Jack"
     agents:
       sandbox_capable: true
       queue: juliacon2023
 
   - block: "Tracy"
   - command: buildkite-agent pipeline upload .buildkite/demo-5-tracy/pipeline.yml
-    label: ":chart_with_upwards_trend: Tracy"
+    label: ":pipeline: :chart_with_upwards_trend: Tracy"
     agents:
       sandbox_capable: true
       queue: juliacon2023
