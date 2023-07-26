@@ -1,0 +1,14 @@
+#@ load("@ytt:data", "data")
+steps:
+  - label: #@ ":test_tube: {} Tests".format(data.values.package)
+
+    plugins:
+      - JuliaCI/julia#v1:
+          version: "1.8"
+      - JuliaCI/julia-test#v1:
+          project: #@ "{}".format(data.values.project)
+
+    agents:
+      sandbox_capable: "true"
+      os: "linux"
+      queue: juliacon2023

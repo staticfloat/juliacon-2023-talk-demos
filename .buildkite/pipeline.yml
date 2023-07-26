@@ -5,6 +5,7 @@ steps:
       - buildkite-agent pipeline upload .buildkite/demo-4-tracy/pipeline.yml
       - buildkite-agent pipeline upload .buildkite/demo-3-jack/pipeline.yml
       - buildkite-agent pipeline upload .buildkite/demo-2-sandbox/pipeline.yml
+      - buildkite-agent pipeline upload .buildkite/demo-2-ytt/pipeline.yml
       - buildkite-agent pipeline upload .buildkite/demo-1-forerunner/pipeline.yml
 
     agents:
