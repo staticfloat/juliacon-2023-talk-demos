@@ -2,8 +2,8 @@ steps:
   - label: ":bucket: jack: Install xz via JLLs"
     agents:
       os: linux
-      sandbox.jl: true
-      queue: "juliaecosystem"
+      sandbox_capable: true
+      queue: "juliacon2023"
 
     plugins:
       - JuliaCI/julia#v1:

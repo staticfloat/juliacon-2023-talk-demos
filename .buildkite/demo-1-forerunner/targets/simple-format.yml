@@ -11,11 +11,11 @@ steps:
       - julia -e '
           out = Cmd(`git diff --name-only`) |> read |> String;
           if out !== ""
-              throw("Some files have not been formatted !!!");
+              @error("Some files have not been formatted !!!");
               write(stdout, out);
               exit(1);
           end'
 
     agents:
-      sandbox.jl: true
-      queue: juliaecosystem
+      sandbox_capable: true
+      queue: juliacon2023

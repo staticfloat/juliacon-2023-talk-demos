@@ -2,7 +2,7 @@ using Test, Tracy, PackageToTest
 
 # Only wait upon Tracy if someone has started up Tracy and notified us of it, as our CI pipeline does
 if haskey(ENV, "TRACY_PORT")
-    @info("Julia", pid=Base.getpid(), port=ENV["TRACY_PORT"])
+    @info("Julia", pid = Base.getpid(), port = ENV["TRACY_PORT"])
     Tracy.wait_for_tracy()
 end
 

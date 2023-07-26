@@ -8,6 +8,6 @@ steps:
           project: {PATH}
 
     agents:
-      sandbox.jl: "true"
+      sandbox_capable: "true"
       os: "linux"
-      queue: juliaecosystem
+      queue: juliacon2023

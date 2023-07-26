@@ -25,7 +25,7 @@ steps:
     command: true
 
     # We require an agent that can run `cryptic`, and we want to run on the
-    # `juliaecosystem` set of runners.
+    # `juliacon2023` set of runners.
     agents:
       cryptic_capable: true
-      queue: juliaecosystem
+      queue: juliacon2023
