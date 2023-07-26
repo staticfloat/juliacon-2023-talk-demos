@@ -1,5 +1,5 @@
 steps:
-  - label: "tracy: Use tracy to trace execution"
+  - label: ":chart_with_upwards_trend: Use tracy to trace execution"
     plugins:
       - JuliaCI/julia#v1:
           version: 1

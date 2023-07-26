@@ -1,5 +1,5 @@
 steps:
-  - label: "Showcase secrets decrypting"
+  - label: ":lock: Showcase secrets decrypting"
     # Note, if this is a child pipeline launched by the webUI config, you MUST receive this
     # value from the parent pipeline in order to decrypt secrets.  Further note, do NOT list
     # this environment variable as a top-level key within ANY `.yaml` file, as this will
