@@ -1,12 +1,11 @@
 steps:
   - label: ":pipeline::julia: Launch JuliaCon 2023 Talk Demo Pipelines!"
     commands:
+      # List these in reverse order so they show up in the right order in buildkite
       - buildkite-agent pipeline upload .buildkite/demo-4-tracy/pipeline.yml
       - buildkite-agent pipeline upload .buildkite/demo-3-jack/pipeline.yml
       - buildkite-agent pipeline upload .buildkite/demo-2-sandbox/pipeline.yml
       - buildkite-agent pipeline upload .buildkite/demo-1-forerunner/pipeline.yml
-      
-      
 
     agents:
       sandbox_capable: true

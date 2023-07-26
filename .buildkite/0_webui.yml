@@ -11,9 +11,9 @@ steps:
           # Only signed pipelines have the ability to decrypt secrets (if you
           # attempt to use `cryptic` to decrypt secrets from an unsigned pipeline,
           # decryption will fail as the necessary keys will not be available).
-          #signed_pipelines:
-          #  - pipeline: .buildkite/demo-6/pipeline.yml
-          #    signature_file: .buildkite/demo-6/pipeline.yml.signature
+          signed_pipelines:
+            - pipeline: .buildkite/demo-6-cryptic/pipeline.yml
+              signature_file: .buildkite/demo-6-cryptic/pipeline.yml.signature
 
           # Pipelines that do not need to decrypt secrets can be launched via
           # `unsigned_pipelines`, and do not need a `signature_file`.
