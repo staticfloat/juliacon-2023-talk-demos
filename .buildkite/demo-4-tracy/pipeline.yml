@@ -15,4 +15,4 @@ steps:
     agents:
       arch: x86_64
       os: linux
-      queue: juliaecosystem
+      queue: juliacon2023

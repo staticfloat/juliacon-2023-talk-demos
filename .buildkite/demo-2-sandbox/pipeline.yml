@@ -15,5 +15,5 @@ steps:
     agents:
       os: "linux"
       arch: "x86_64"
-      sandbox.jl: true
-      queue: juliaecosystem
+      sandbox_capable: true
+      queue: juliacon2023

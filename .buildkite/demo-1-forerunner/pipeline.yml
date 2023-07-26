@@ -45,5 +45,5 @@ steps:
       # using `ytt` via the `JuliaCI/ytt` plugin.
 
     agents:
-      sandbox.jl: true
-      queue: juliaecosystem
+      sandbox_capable: true
+      queue: juliacon2023

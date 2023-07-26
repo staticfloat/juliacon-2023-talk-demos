@@ -9,5 +9,5 @@ steps:
       
 
     agents:
-      sandbox.jl: true
-      queue: juliaecosystem
+      sandbox_capable: true
+      queue: juliacon2023
